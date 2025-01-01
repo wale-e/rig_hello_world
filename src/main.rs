@@ -1,10 +1,8 @@
 /// This example requires that you have the [`ollama`](https://ollama.com) server running locally.
 use rig::{completion::Prompt, providers};
-use tracing_subscriber;
 
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {
-    tracing_subscriber::fmt().init();
     // Create an OpenAI client with a custom base url, a local ollama endpoint
     // The API Key is unnecessary for most local endpoints
     let client = providers::openai::Client::from_url("ollama", "http://localhost:11434/v1");
